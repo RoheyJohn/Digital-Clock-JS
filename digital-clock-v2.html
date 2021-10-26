@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JCC Digital Clock</title>
+    <style>
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        background-image: url("earth-bg.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        /* align-items: center; */
+        color: white;
+        position: relative;
+        overflow: hidden;
+        padding: 10px 15px;
+      }
+      body::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+      }
+      main {
+        display: flex;
+        flex: 1;
+        cursor: pointer;
+        flex-direction: column;
+        /* color: white; */
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        transition: all 0.4s;
+        backface-visibility: hidden;
+      }
+      .zoomIn {
+        transform: scale(2.5);
+      }
+      header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+      footer img {
+        width: 250px;
+      }
+      h1 {
+        font-size: 3rem;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+      /* direct child selector */
+      main > div {
+        display: flex;
+        align-items: center;
+      }
+      #time > div {
+        font-size: 8rem;
+      }
+      #date {
+        font-size: 2rem;
+      }
+      main span {
+        font-size: 4rem;
+      }
+      footer {
+        padding: 15px;
+
+        display: flex;
+        justify-content: space-between;
+        color: whitesmoke;
+        align-items: center;
+        max-width: 1140px;
+        width: 100%;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Digital Clock</h1>
+    </header>
+    <main>
+      <div id="date"></div>
+      <div id="time">
+        <div id="hour"></div>
+        <span>:</span>
+        <div id="minutes"></div>
+        <span>:</span>
+        <div id="seconds"></div>
+      </div>
+    </main>
+    <footer>
+      <a href="https://jassehcodecamp.com" target="__blank">
+        <img src="logo.png" alt="" />
+      </a>
+      <p>Part of the projects in the JCC Javascript Master Course</p>
+      <!-- <p>JavaScript Master Course</p> -->
+    </footer>
+    <script src="digital-clock-v2.js"></script>
+  </body>
+</html>
